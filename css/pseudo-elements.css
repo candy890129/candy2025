@@ -1,0 +1,19 @@
+.hello::before {
+  content: "花寶寶";
+}
+
+.hello::after {
+  content: "(能夠看到你!真的很快樂)";
+}
+
+.article::first-letter {
+  font-size: 30px;
+  background: #e98585;
+  color: #fff;
+  padding: 5px;
+}
+
+.article::selection {
+  background: #eb1111;
+  color: #fff;
+}
