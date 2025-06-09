@@ -45,3 +45,13 @@
   font-weight: bold;
   color: red;
 }
+
+.product .price:before,
+.product .sale-price:before {
+  content: attr(data-type-prefix) " ";
+}
+
+.product .price:after,
+.product .sale-price:after {
+  content: attr(data-type-suffix) " ";
+}
