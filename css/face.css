@@ -1,0 +1,86 @@
+.container {
+  padding: 10px;
+  margin: 10px;
+}
+
+.slogan {
+  padding: 10px;
+  margin: 10px;
+}
+
+.face {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  background-color: rgb(243, 191, 161);
+}
+
+.face .eye-right {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  background-color: #fff;
+  position: absolute;
+  top: 50px;
+  left: 30px;
+}
+
+.face .eye-right .dot-right {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-color: #000;
+  position: relative;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+}
+
+.face .eye-left {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  background-color: #fff;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+}
+
+.face .eye-left .dot-left {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-color: #000;
+  position: relative;
+  top: calc(50% - 25px);
+  right: calc(50% - 75px);
+}
+
+.face .nose {
+  height: 50px;
+  width: 50px;
+  border-radius: 30px;
+  background-color: rgb(250, 139, 66);
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
+
+.face .mouth {
+  height: 50px;
+  width: 150px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 75px);
+  overflow: hidden;
+}
+
+.face .though {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  position: absolute;
+  background-color: red;
+  left: calc(50% - 25px);
+  bottom: calc(25px * -1);
+}
