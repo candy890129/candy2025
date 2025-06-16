@@ -1,0 +1,14 @@
+.d-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.d-grid .item {
+  width: 100px;
+  height: 100px;
+  background: #2858db;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
