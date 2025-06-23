@@ -1,0 +1,5 @@
+.article {
+  font-size: 20px;
+  color: rgb(43, 68, 212);
+  animation: bounce 1s infinite;
+}
