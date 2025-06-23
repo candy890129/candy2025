@@ -1,5 +1,5 @@
 $primary-color: rgb(255, 255, 255);
-$primary-bg: #505050;
+$primary-bg: #6daffa;
 
 .header {
     width: 100%;
@@ -18,7 +18,7 @@ $primary-bg: #505050;
         .logo {
             font-size: 24px;
             font-weight: bold;
-            color: red;
+            color: rgb(243, 239, 239);
         }
 
         .menu {
@@ -36,7 +36,7 @@ $primary-bg: #505050;
                     border: 1px solid $primary-color;
 
                     &:hover {
-                        color: red;
+                        color: rgb(37, 87, 252);
                     }
                 }
             }

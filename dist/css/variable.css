@@ -3,7 +3,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  background-color: #505050;
+  background-color: #6daffa;
   color: rgb(255, 255, 255);
 }
 .header .wrap {
@@ -15,7 +15,7 @@
 .header .wrap .logo {
   font-size: 24px;
   font-weight: bold;
-  color: red;
+  color: rgb(243, 239, 239);
 }
 .header .wrap .menu a {
   color: inherit;
@@ -31,7 +31,7 @@
   border: 1px solid rgb(255, 255, 255);
 }
 .header .wrap .menu ul li:hover {
-  color: red;
+  color: rgb(37, 87, 252);
 }
 .header > .info {
   color: red;
