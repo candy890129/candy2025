@@ -38,6 +38,7 @@ ul {
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
+  z-index: 99;
 }
 .header .wrap {
   display: flex;
@@ -150,7 +151,7 @@ ul {
 }
 
 .info {
-  background-color: white;
+  background-color: #ffffff;
   padding: 100px 0;
 }
 .info .slogan {
@@ -186,4 +187,11 @@ ul {
   color: #fff;
   text-align: center;
   padding: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .main .warp .btn-group {
+    flex-direction: column;
+    min-width: 300px;
+  }
 }/*# sourceMappingURL=layout-hero.css.map */

@@ -9,6 +9,7 @@
     color: $header-color;
     font-size: $header-font-size;
     font-weight: $header-font-weight;
+    z-index: 99;
 
     .wrap {
         display: flex;
@@ -139,8 +140,9 @@
         }
     }
 }
+
 .info {
-    background-color: #ffff;
+    background-color: #ffffff;
     padding: 100px 0;
 
     .slogan {
@@ -175,9 +177,12 @@
         }
     }
 }
+
 .footer {
     background-color: #1f2937;
     color: #fff;
     text-align: center;
     padding: 20px 0;
 }
+
+@import "layout-hero-responsive";
