@@ -66,5 +66,76 @@
     font-size: 40px;
     font-weight: 700;
     text-align: center;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.39);
+    }
+
+    .wrap {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+
+        .slogan {
+            font-size: 3rem;
+        }
+
+        .sub-slogan {
+            font-size: 1.5rem;
+            width: 70%;
+            line-height: 2;
+            font-weight: 500;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+
+            .btn {
+                padding: 15px 30px;
+                border-radius: 5px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                background-color: #facc15;
+                color: #000;
+                &:hover {
+                    background-color: #ceb038;
+                    color: #000;
+                }
+
+                &.border {
+                    background-color: transparent;
+                    border: 1px solid #fff;
+                    color: #fff;
+                    &:hover {
+                        background-color: #fff;
+                        color: #000;
+                    }
+                }
+
+                &.danger {
+                    background-color: #fa5615;
+                    color: #fff;
+                    &:hover {
+                        background-color: #bd400f;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
 }
