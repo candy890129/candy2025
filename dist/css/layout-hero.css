@@ -194,4 +194,13 @@ ul {
     flex-direction: column;
     min-width: 300px;
   }
+  .info .row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main .warp .btn-group {
+    width: unset;
+  }
 }/*# sourceMappingURL=layout-hero.css.map */
