@@ -1,12 +1,35 @@
 @media screen and (max-width: 768px) {
-    .main {
-        .warp {
-            .btn-group {
-                flex-direction: column;
-                min-width: 300px;
+    .header {
+        .wrap {
+            position: relative;
+            justify-content: center;
+
+            .hamburger {
+                display: grid;
+                position: absolute;
+                right: 0;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .logo {
+                // text-align: center; 另一種解法
+                // flex: 1;
             }
         }
     }
+
+    .main {
+        .wrap {
+            .btn-group {
+                flex-direction: column;
+                width: 300px;
+            }
+        }
+    }
+
     .info {
         .row {
             grid-template-columns: 1fr;
@@ -17,7 +40,7 @@
 
 @media screen and (max-width: 400px) {
     .main {
-        .warp {
+        .wrap {
             .btn-group {
                 width: unset;
             }
