@@ -8,6 +8,16 @@
                 display: grid;
                 position: absolute;
                 right: 0;
+
+                &.active {
+                    > span {
+                        background-color: #1f7ffd;
+                    }
+                }
+
+                > span {
+                    transition: all 0.3s ease;
+                }
             }
 
             .menu {
@@ -15,7 +25,7 @@
             }
 
             .logo {
-                // text-align: center; 另一種解法
+                // text-align: center;
                 // flex: 1;
             }
         }
