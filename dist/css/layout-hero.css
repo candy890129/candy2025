@@ -217,6 +217,15 @@ ul {
   .header .wrap .hamburger.active > span {
     background-color: #1f7ffd;
   }
+  .header .wrap .hamburger.active > span:nth-child(1) {
+    transform: translateY(15px) rotate(45deg);
+  }
+  .header .wrap .hamburger.active > span:nth-child(2) {
+    opacity: 0;
+  }
+  .header .wrap .hamburger.active > span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+  }
   .header .wrap .hamburger > span {
     transition: all 0.3s ease;
   }
