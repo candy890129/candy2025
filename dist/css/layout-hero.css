@@ -214,18 +214,6 @@ ul {
     position: absolute;
     right: 0;
   }
-  .header .wrap .hamburger.active > span {
-    background-color: #fd1f1f;
-  }
-  .header .wrap .hamburger.active > span:nth-child(1) {
-    animation: hamburger-line-1-open 0.5s ease forwards;
-  }
-  .header .wrap .hamburger.active > span:nth-child(2) {
-    animation: hamburger-line-2-open 0.5s ease forwards;
-  }
-  .header .wrap .hamburger.active > span:nth-child(3) {
-    animation: hamburger-line-3-open 0.5s ease forwards;
-  }
   .header .wrap .hamburger > span:nth-child(1) {
     animation: hamburger-line-1-close 0.5s ease forwards;
   }
@@ -238,6 +226,21 @@ ul {
   .header .wrap .menu {
     display: none;
   }
+  .header #menu-toggle {
+    display: none;
+  }
+  .header #menu-toggle:checked ~ .wrap .hamburger > span {
+    background-color: #6081ee;
+  }
+  .header #menu-toggle:checked ~ .wrap .hamburger > span:nth-child(1) {
+    animation: hamburger-line-1-open 0.5s ease forwards;
+  }
+  .header #menu-toggle:checked ~ .wrap .hamburger > span:nth-child(2) {
+    animation: hamburger-line-2-open 0.5s ease forwards;
+  }
+  .header #menu-toggle:checked ~ .wrap .hamburger > span:nth-child(3) {
+    animation: hamburger-line-3-open 0.5s ease forwards;
+  }
   .main .wrap .btn-group {
     flex-direction: column;
     width: 300px;
@@ -245,6 +248,54 @@ ul {
   .info .row {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+}
+@keyframes hamburger-line-1-open {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(15px) rotate(45deg);
+  }
+}
+@keyframes hamburger-line-1-close {
+  0% {
+    transform: translateY(15px) rotate(45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+@keyframes hamburger-line-2-open {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes hamburger-line-2-close {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hamburger-line-3-open {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-11px) rotate(-45deg);
+  }
+}
+@keyframes hamburger-line-3-close {
+  0% {
+    transform: translateY(-11px) rotate(-45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
   }
 }
 @media screen and (max-width: 400px) {
