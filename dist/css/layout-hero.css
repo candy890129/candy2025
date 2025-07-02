@@ -215,19 +215,25 @@ ul {
     right: 0;
   }
   .header .wrap .hamburger.active > span {
-    background-color: #1f7ffd;
+    background-color: #fd1f1f;
   }
   .header .wrap .hamburger.active > span:nth-child(1) {
-    transform: translateY(15px) rotate(45deg);
+    animation: hamburger-line-1-open 0.5s ease forwards;
   }
   .header .wrap .hamburger.active > span:nth-child(2) {
-    opacity: 0;
+    animation: hamburger-line-2-open 0.5s ease forwards;
   }
   .header .wrap .hamburger.active > span:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
+    animation: hamburger-line-3-open 0.5s ease forwards;
   }
-  .header .wrap .hamburger > span {
-    transition: all 0.3s ease;
+  .header .wrap .hamburger > span:nth-child(1) {
+    animation: hamburger-line-1-close 0.5s ease forwards;
+  }
+  .header .wrap .hamburger > span:nth-child(2) {
+    animation: hamburger-line-2-close 0.5s ease forwards;
+  }
+  .header .wrap .hamburger > span:nth-child(3) {
+    animation: hamburger-line-3-close 0.5s ease forwards;
   }
   .header .wrap .menu {
     display: none;

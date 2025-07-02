@@ -11,21 +11,29 @@
 
                 &.active {
                     > span {
-                        background-color: #1f7ffd;
+                        background-color: #fd1f1f;
                         &:nth-child(1) {
-                            transform: translateY(15px) rotate(45deg);
+                            animation: hamburger-line-1-open 0.5s ease forwards;
                         }
                         &:nth-child(2) {
-                            opacity: 0;
+                            animation: hamburger-line-2-open 0.5s ease forwards;
                         }
                         &:nth-child(3) {
-                            transform: translateY(-11px) rotate(-45deg);
+                            animation: hamburger-line-3-open 0.5s ease forwards;
                         }
                     }
                 }
 
                 > span {
-                    transition: all 0.3s ease;
+                    &:nth-child(1) {
+                        animation: hamburger-line-1-close 0.5s ease forwards;
+                    }
+                    &:nth-child(2) {
+                        animation: hamburger-line-2-close 0.5s ease forwards;
+                    }
+                    &:nth-child(3) {
+                        animation: hamburger-line-3-close 0.5s ease forwards;
+                    }
                 }
             }
 
