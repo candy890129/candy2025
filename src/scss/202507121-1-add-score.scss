@@ -1,0 +1,52 @@
+@import "reset";
+.main {
+    margin: 20px;
+    .warp {
+        padding: 20px;
+        border: 1px solid #a09a9a;
+    }
+
+    .title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .fn {
+        margin-bottom: 20px;
+        text-align: center;
+
+        .btn {
+            padding: 10px 20px;
+            border: 1px solid #a09a9a;
+            border-radius: 5px;
+            background-color: #1aa5f5;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transform: all 0.3s ease;
+            &:hover {
+                background-color: #87b2eb;
+            }
+        }
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #424040;
+            text-align: center;
+        }
+
+        th {
+            background-color: #82bfe2;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #c9c7e6;
+        }
+    }
+}
