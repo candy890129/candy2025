@@ -52,6 +52,18 @@
                 <div class="p-3 border border-3 mt-3">{{ article }}</div>
 
                 <div class="p-3 border border-3 mt-3" v-html="article"></div>
+                <div class="mt-2 p-3 border border-3">
+                    <div class="form-group mb-2">
+                        <input
+                            type="text"
+                            class="form-control"
+                            v-model="readMoreLink"
+                        />
+                    </div>
+                    <a :href="readMoreLink" class="btn btn-primary"
+                        >Read more</a
+                    >
+                </div>
             </div>
         </div>
 

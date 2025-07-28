@@ -10,7 +10,9 @@ let options = {
             <a href="https://www.google.com">Google</a>
             <p>
                 <a href="https://www.google.com">Google</a>
-            </p>`,
+            </p> 
+            <script>alert("Hello")</script>`,
+            readMoreLink: "https://www.google.com",
         };
     },
     methods: {},
