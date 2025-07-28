@@ -23,6 +23,7 @@
                         class="form-control"
                         id="account"
                         v-model="account"
+                        @keyup="onlyString"
                     />
                 </div>
                 <div class="form-group">
@@ -63,6 +64,11 @@
                     <a :href="readMoreLink" class="btn btn-primary"
                         >Read more</a
                     >
+                </div>
+                <div class="mt-2 p-3 border border-3">
+                    <button class="btn btn-primary" @click="toggleRemember">
+                        Toggle Remember
+                    </button>
                 </div>
             </div>
         </div>

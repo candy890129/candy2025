@@ -15,7 +15,16 @@ let options = {
             readMoreLink: "https://www.google.com",
         };
     },
-    methods: {},
+    methods: {
+        toggleRemember() {
+            // ture -> false
+            // false -> true
+            this.remember = !this.remember;
+        },
+        onlyString() {
+            this.account = this.account.replace(/[^a-zA-Z]/g, "");
+        },
+    },
     mounted() {
         console.log("mounted");
     },
