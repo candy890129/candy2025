@@ -12,6 +12,17 @@
   justify-content: center;
 }
 
+.main .all-table-wrap.is-both {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.main .all-table-wrap.is-both .table {
+  display: none;
+}
+.main .all-table-wrap.is-both .table.both-table {
+  display: table;
+}
 .main .table {
   width: 100%;
   border-collapse: collapse;
@@ -25,6 +36,9 @@
   border: 1px solid #dedede;
   padding: 10px;
   text-align: center;
+}
+.main .table.both-table {
+  display: none;
 }
 .main .fn {
   margin-bottom: 20px;

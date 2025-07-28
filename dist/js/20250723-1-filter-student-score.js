@@ -43,8 +43,11 @@ let students = [
 
 let dom = {
     allTable: document.querySelector("#all-table"),
+    passTable: document.querySelector("#pass-table"),
+    failTable: document.querySelector("#fail-table"),
     fn: document.querySelector("#fn"),
     fnBtns: document.querySelectorAll("#fn .btn"),
+    allTableWrap: document.querySelector("#all-table-wrap"),
 };
 
 console.log(students);
@@ -61,6 +64,7 @@ dom.fn.addEventListener("click", (e) => {
     e.stopPropagation();
     let target = e.target;
     if (target.classList.contains("btn")) {
+        dom.allTableWrap.classList.remove("is-both");
         // 移除所有按鈕的 active 類別
         dom.fnBtns.forEach((btn) => {
             btn.classList.remove("active");
@@ -69,34 +73,38 @@ dom.fn.addEventListener("click", (e) => {
         if (target.classList.contains("all")) {
             console.log("is all btn");
             target.classList.add("active");
-            // someting
+            renderAllTable();
         }
 
         if (target.classList.contains("pass")) {
             console.log("is pass btn");
             target.classList.add("active");
-            // someting
+            renderPassTable();
         }
 
         if (target.classList.contains("fail")) {
             console.log("is fail btn");
             target.classList.add("active");
-            // someting
+            renderFailTable();
         }
 
         if (target.classList.contains("both")) {
             console.log("is both btn");
             target.classList.add("active");
-            // someting
+            dom.allTableWrap.classList.add("is-both");
+            renderPassTable("pass");
+            renderFailTable("fail");
         }
     }
 });
 
 /**
- * 渲染所有學生資料
+ * 渲染學生資料
+ * @param {Array} students 學生資料
+ * @param {string} targetTable 目標表格
  * @returns {void}
  */
-const renderAllTable = () => {
+const renderTable = (students, targetTable) => {
     let tbody = "";
     students.forEach((student) => {
         tbody += `<tr>
@@ -105,7 +113,43 @@ const renderAllTable = () => {
         </tr>`;
     });
 
-    dom.allTable.querySelector("tbody").innerHTML = tbody;
+    let table = dom.allTable;
+
+    if (targetTable === "pass") {
+        table = dom.passTable;
+    }
+
+    if (targetTable === "fail") {
+        table = dom.failTable;
+    }
+
+    table.querySelector("tbody").innerHTML = tbody;
+};
+
+/**
+ * 渲染所有學生資料
+ * @returns {void}
+ */
+const renderAllTable = () => {
+    renderTable(students);
+};
+
+/**
+ * 渲染及格學生資料
+ * @returns {void}
+ */
+const renderPassTable = (targetTable) => {
+    let passes = filterStudent(true);
+    renderTable(passes, targetTable);
+};
+
+/**
+ * 渲染不及格學生資料
+ * @returns {void}
+ */
+const renderFailTable = (targetTable) => {
+    let fails = filterStudent(false);
+    renderTable(fails, targetTable);
 };
 
 /**
@@ -126,40 +170,6 @@ const filterStudent = (isPass) => {
 
 let fails = filterStudent();
 let passes = filterStudent(true);
-
-/**
- * 渲染及格學生資料
- * @returns {void}
- */
-const renderPassTable = () => {
-    let tbody = "";
-    let passes = filterStudent(true);
-    passes.forEach((student) => {
-        tbody += `<tr>
-    <td>${student.name}</td>
-        <td>${student.score}</td>
-        </tr>`;
-    });
-
-    dom.allTable.querySelector("tbody").innerHTML = tbody;
-};
-
-/**
- * 渲染不及格學生資料
- * @returns {void}
- */
-const renderFailTable = () => {
-    let tbody = "";
-    let passes = filterStudent(false);
-    passes.forEach((student) => {
-        tbody += `<tr>
-    <td>${student.name}</td>
-        <td>${student.score}</td>
-        </tr>`;
-    });
-
-    dom.allTable.querySelector("tbody").innerHTML = tbody;
-};
 
 // renderAllTable();
 // renderPassTable();

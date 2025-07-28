@@ -16,6 +16,21 @@
 }
 
 .main {
+    .all-table-wrap {
+        &.is-both {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            .table {
+                display: none;
+
+                &.both-table {
+                    display: table;
+                }
+            }
+        }
+    }
+
     .table {
         width: 100%;
         border-collapse: collapse;
@@ -30,6 +45,10 @@
             border: 1px solid #dedede;
             padding: 10px;
             text-align: center;
+        }
+
+        &.both-table {
+            display: none;
         }
     }
 
