@@ -1,0 +1,100 @@
+.header {
+  text-align: center;
+  height: 60px;
+  border-bottom: 2px solid #dedede;
+  margin-bottom: 20px;
+}
+.header .header-title {
+  height: 100%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.main .table th {
+  background-color: #2198e7;
+  color: #fff;
+}
+.main .table th,
+.main .table td {
+  border: 1px solid #dedede;
+  padding: 10px;
+  text-align: center;
+}
+.main .fn {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.main .fn .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #2198e7;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.main .fn .btn:hover {
+  background-color: #1976b7;
+}
+.main .fn .btn.all {
+  border-color: #21e79b;
+  background-color: transparent;
+  color: #000;
+}
+.main .fn .btn.all.active {
+  background-color: #21e79b;
+  color: #fff;
+}
+.main .fn .btn.all:hover {
+  background-color: #21e79b;
+  color: #fff;
+}
+.main .fn .btn.pass {
+  border-color: #21afe7;
+  background-color: transparent;
+  color: #000;
+}
+.main .fn .btn.pass.active {
+  background-color: #21afe7;
+  color: #fff;
+}
+.main .fn .btn.pass:hover {
+  background-color: #21afe7;
+  color: #fff;
+}
+.main .fn .btn.fail {
+  border-color: #e72121;
+  background-color: transparent;
+  color: #000;
+}
+.main .fn .btn.fail.active {
+  background-color: #e72121;
+  color: #fff;
+}
+.main .fn .btn.fail:hover {
+  background-color: #e72121;
+  color: #fff;
+}
+.main .fn .btn.both {
+  border-color: #e049d3;
+  background-color: transparent;
+  color: #000;
+}
+.main .fn .btn.both.active {
+  background-color: #e049d3;
+  color: #fff;
+}
+.main .fn .btn.both:hover {
+  background-color: #e049d3;
+  color: #fff;
+}/*# sourceMappingURL=20250723-1-filter-student-score.css.map */
