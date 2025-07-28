@@ -34,10 +34,30 @@
                         v-model="password"
                     />
                 </div>
+                <div class="form-check">
+                    <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="remember"
+                        v-model="remember"
+                    />
+                    <label for="remember" class="form-check-label"
+                        >Remember</label
+                    >
+                </div>
 
                 <div class="badge bg-primary">{{ account }}</div>
                 <div class="badge bg-danger">{{ password }}</div>
+                <div class="badge bg-success">{{ remember }}</div>
+                <div class="p-3 border border-3 mt-3">{{ article }}</div>
+
+                <div class="p-3 border border-3 mt-3" v-html="article"></div>
             </div>
+        </div>
+
+        <div class="container">
+            <h2>Outside #app</h2>
+            <div class="badge bg-primary">{{ account }}</div>
         </div>
     </body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
