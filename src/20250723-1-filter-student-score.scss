@@ -1,0 +1,33 @@
+@import "reset";
+
+.header {
+    text-align: center;
+    height: 60px;
+    border-bottom: 2px solid #dedede;
+    margin-bottom: 20px;
+
+    .header-title {
+        height: 100%;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+        background-color: #2198e7;
+        color: #fff;
+    }
+
+    th,
+    td {
+        border: 1px solid #dedede;
+        padding: 10px;
+        text-align: center;
+    }
+}
