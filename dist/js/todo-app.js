@@ -67,3 +67,17 @@ const options = {
 };
 
 createApp(options).mount("#app");
+
+// 儲存
+// const student = {
+//     name: "David",
+//     score: 80,
+// };
+
+// const studentJson = JSON.stringify(student);
+// localStorage.setItem("student", studentJson);
+
+// 取出
+const studentJson = localStorage.getItem("student");
+const student = JSON.parse(studentJson);
+console.log(student, student.name);
