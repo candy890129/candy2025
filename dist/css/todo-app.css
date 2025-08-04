@@ -65,6 +65,7 @@ body {
   display: grid;
   gap: 20px;
   color: #cacaca;
+  margin-bottom: 20px;
 }
 #app .wrap .setting .user {
   display: flex;
@@ -81,6 +82,37 @@ body {
 }
 #app .wrap .setting .danger {
   color: #ff0000;
+}
+#app .wrap .create {
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 15px;
+}
+#app .wrap .create .input-group {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+#app .wrap .create .input-group input[type=text] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1568627451);
+  width: 100%;
+  height: 40px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+#app .wrap .create .input-group input[type=text]::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.6235294118);
+}
+#app .wrap .create .input-group input[type=text]::placeholder {
+  color: rgba(255, 255, 255, 0.6235294118);
+}
+#app .wrap .create .input-group input[type=text]:focus {
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.8);
 }
 #app .btn {
   padding: 10px 20px;
