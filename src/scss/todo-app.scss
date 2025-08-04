@@ -1,19 +1,24 @@
 @import "reset";
 
+:root {
+    --border-color: #3482e9;
+    --border-radius: 15px;
+}
+
 html,
 body {
     font-size: 16px;
 }
 
 body {
-    background: linear-gradient(to right, #ff000088, #f3df2edc);
+    background: linear-gradient(to right, #0a3e8388, #0a3f83dc);
 }
 
 #app {
     .wrap {
         padding: 15px;
         border-radius: 10px;
-        background: linear-gradient(to bottom, #31040463, #db380663);
+        background: linear-gradient(to bottom, #00000063, #06998063);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
         margin: 20px auto;
         min-height: 500px;
@@ -24,6 +29,69 @@ body {
             text-align: center;
             margin-bottom: 20px;
             font-weight: 600;
+        }
+
+        .setting {
+            padding: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            display: grid;
+            // grid-template-columns: 1fr;
+            gap: 20px;
+            color: #cacaca;
+
+            .user {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .api {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .light {
+                color: #fff;
+            }
+
+            .danger {
+                color: #ff0000;
+            }
+        }
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        outline: none;
+        border: 0;
+        background: #10413e;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+
+        &.warning {
+            background: #ff8800;
+            color: #fff;
+
+            &:hover {
+                background: #e97d01;
+            }
+        }
+
+        &.primary {
+            background: #3482e9;
+            color: #fff;
+
+            &:hover {
+                background: #2a69c2;
+            }
         }
     }
 }

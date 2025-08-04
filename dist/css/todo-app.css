@@ -29,19 +29,24 @@ ul {
   list-style-type: none;
 }
 
+:root {
+  --border-color: #3482e9;
+  --border-radius: 15px;
+}
+
 html,
 body {
   font-size: 16px;
 }
 
 body {
-  background: linear-gradient(to right, rgba(255, 0, 0, 0.5333333333), rgba(243, 223, 46, 0.862745098));
+  background: linear-gradient(to right, rgba(10, 62, 131, 0.5333333333), rgba(10, 63, 131, 0.862745098));
 }
 
 #app .wrap {
   padding: 15px;
   border-radius: 10px;
-  background: linear-gradient(to bottom, rgba(49, 4, 4, 0.3882352941), rgba(219, 56, 6, 0.3882352941));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3882352941), rgba(6, 153, 128, 0.3882352941));
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   margin: 20px auto;
   min-height: 500px;
@@ -52,4 +57,56 @@ body {
   text-align: center;
   margin-bottom: 20px;
   font-weight: 600;
+}
+#app .wrap .setting {
+  padding: 15px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  display: grid;
+  gap: 20px;
+  color: #cacaca;
+}
+#app .wrap .setting .user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#app .wrap .setting .api {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#app .wrap .setting .light {
+  color: #fff;
+}
+#app .wrap .setting .danger {
+  color: #ff0000;
+}
+#app .btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  outline: none;
+  border: 0;
+  background: #10413e;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+#app .btn.warning {
+  background: #ff8800;
+  color: #fff;
+}
+#app .btn.warning:hover {
+  background: #e97d01;
+}
+#app .btn.primary {
+  background: #3482e9;
+  color: #fff;
+}
+#app .btn.primary:hover {
+  background: #2a69c2;
 }/*# sourceMappingURL=todo-app.css.map */
