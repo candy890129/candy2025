@@ -108,6 +108,40 @@ body {
                 border-radius: var(--border-radius);
                 padding: 20px;
                 min-height: 300px;
+
+                h2 {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .list-group {
+                display: grid;
+                gap: 10px;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 15px;
+                    border-radius: 5px;
+                    background: #ffffff28;
+                    color: #fff;
+                    font-size: 1.1rem;
+                    cursor: pointer;
+                    box-shadow: 0 0 8px 0 rgba(156, 156, 156, 0.5);
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-2px);
+                    }
+                }
+
+                &.done {
+                    li {
+                        background: #00000028;
+                        box-shadow: 0 0 8px 0 rgba(75, 75, 75, 0.5);
+                    }
+                }
             }
         }
     }
@@ -141,6 +175,15 @@ body {
 
             &:hover {
                 background: #2a69c2;
+            }
+        }
+
+        &.danger {
+            background: #ff3511;
+            color: #fff;
+
+            &:hover {
+                background: #e90101;
             }
         }
     }

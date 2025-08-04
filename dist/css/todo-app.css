@@ -126,6 +126,33 @@ body {
   padding: 20px;
   min-height: 300px;
 }
+#app .wrap .list .list-item h2 {
+  margin-bottom: 20px;
+}
+#app .wrap .list .list-group {
+  display: grid;
+  gap: 10px;
+}
+#app .wrap .list .list-group li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1568627451);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 8px 0 rgba(156, 156, 156, 0.5);
+  transition: all 0.3s ease;
+}
+#app .wrap .list .list-group li:hover {
+  transform: translateY(-2px);
+}
+#app .wrap .list .list-group.done li {
+  background: rgba(0, 0, 0, 0.1568627451);
+  box-shadow: 0 0 8px 0 rgba(75, 75, 75, 0.5);
+}
 #app .btn {
   padding: 10px 20px;
   border-radius: 5px;
@@ -153,4 +180,11 @@ body {
 }
 #app .btn.primary:hover {
   background: #2a69c2;
+}
+#app .btn.danger {
+  background: #ff3511;
+  color: #fff;
+}
+#app .btn.danger:hover {
+  background: #e90101;
 }/*# sourceMappingURL=todo-app.css.map */
