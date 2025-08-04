@@ -11,7 +11,7 @@ body {
 }
 
 body {
-    background: linear-gradient(to right, #0a3e8388, #0a3f83dc);
+    background: linear-gradient(to right, #fa040488, #f36405dc);
 }
 
 #app {
@@ -99,7 +99,7 @@ body {
         .list {
             .list-wrap {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
                 gap: 20px;
             }
 

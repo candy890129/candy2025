@@ -22,7 +22,7 @@ const options = {
             this.processList.push({
                 id: Date.now(),
                 text: this.processText,
-                status: "process",
+                status: "pending",
             });
 
             // 清空輸入框
@@ -31,49 +31,43 @@ const options = {
             // 儲存資料
             todoStorage.write(this.processList);
         },
-        toDone(id) {
-            // 將資料拿出，call by reference
+        toStatus(id, status) {
             let items = this.processList.filter((item) => {
                 return item.id === id;
             });
 
             if (items.length > 0) {
-                items[0].status = "done";
+                items[0].status = status;
                 todoStorage.write(this.processList);
             }
-
-            // // 推到完成列表
-            // this.processDoneList.push(item);
-
-            // // 刪除原本的資料
-            // this.processList.splice(index, 1);
         },
-        toProcess(id) {
-            // 將資料拿出，call by reference
+        statusItems(status) {
+            return this.processList.filter((item) => {
+                return item.status === status;
+            });
+        },
+        async deleteItem(id) {
             let items = this.processList.filter((item) => {
                 return item.id === id;
             });
 
             if (items.length > 0) {
-                items[0].status = "process";
-                todoStorage.write(this.processList);
+                const result = await Swal.fire({
+                    title: "刪除確認",
+                    text: `確定要刪除 ${items[0].text} 嗎？`,
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonText: "確定",
+                    cancelButtonText: "取消",
+                });
+
+                if (result.isConfirmed) {
+                    this.processList = this.processList.filter((item) => {
+                        return item.id !== id;
+                    });
+                    todoStorage.write(this.processList);
+                }
             }
-
-            // // 推到進行中列表
-            // this.processList.push(item);
-
-            // // 刪除原本的資料
-            // this.processDoneList.splice(index, 1);
-        },
-        processItems() {
-            return this.processList.filter((item) => {
-                return item.status === "process";
-            });
-        },
-        doneItems() {
-            return this.processList.filter((item) => {
-                return item.status === "done";
-            });
         },
     },
     mounted() {
@@ -84,17 +78,3 @@ const options = {
 };
 
 createApp(options).mount("#app");
-
-// 儲存
-// const student = {
-//     name: "David",
-//     score: 80,
-// };
-
-// const studentJson = JSON.stringify(student);
-// localStorage.setItem("student", studentJson);
-
-// 取出
-const studentJson = localStorage.getItem("student");
-const student = JSON.parse(studentJson);
-console.log(student, student.name);

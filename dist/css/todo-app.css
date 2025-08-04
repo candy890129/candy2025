@@ -40,7 +40,7 @@ body {
 }
 
 body {
-  background: linear-gradient(to right, rgba(10, 62, 131, 0.5333333333), rgba(10, 63, 131, 0.862745098));
+  background: linear-gradient(to right, rgba(250, 4, 4, 0.5333333333), rgba(243, 100, 5, 0.862745098));
 }
 
 #app .wrap {
@@ -117,7 +117,7 @@ body {
 }
 #app .wrap .list .list-wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
 #app .wrap .list .list-item {

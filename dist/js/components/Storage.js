@@ -1,7 +1,20 @@
-import { Storage } from "./components/Storage.js";
-const todoStorage = new Storage("todo");
+class Storage {
+    constructor(key) {
+        this.key = key;
+    }
 
-// todoStorage.write({ a: 1, b: 2 });
+    write(value) {
+        const valueJson = JSON.stringify(value);
+        localStorage.setItem(this.key, valueJson);
+    }
 
-let a = todoStorage.read();
-console.log(a);
+    read(defaultValue = "") {
+        const valueJson = localStorage.getItem(this.key);
+        if (!valueJson) {
+            return defaultValue;
+        }
+        return JSON.parse(valueJson);
+    }
+}
+
+export { Storage };
