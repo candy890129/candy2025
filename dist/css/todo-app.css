@@ -27,4 +27,29 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+html,
+body {
+  font-size: 16px;
+}
+
+body {
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.5333333333), rgba(243, 223, 46, 0.862745098));
+}
+
+#app .wrap {
+  padding: 15px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, rgba(49, 4, 4, 0.3882352941), rgba(219, 56, 6, 0.3882352941));
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  min-height: 500px;
+  color: #fff;
+}
+#app .wrap .title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
 }/*# sourceMappingURL=todo-app.css.map */

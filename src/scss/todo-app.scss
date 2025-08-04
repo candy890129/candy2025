@@ -1,1 +1,29 @@
 @import "reset";
+
+html,
+body {
+    font-size: 16px;
+}
+
+body {
+    background: linear-gradient(to right, #ff000088, #f3df2edc);
+}
+
+#app {
+    .wrap {
+        padding: 15px;
+        border-radius: 10px;
+        background: linear-gradient(to bottom, #31040463, #db380663);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        margin: 20px auto;
+        min-height: 500px;
+        color: #fff;
+
+        .title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+    }
+}
