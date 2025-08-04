@@ -60,7 +60,7 @@
                                         v-for="(item, index) in processList"
                                         :key="index"
                                     >
-                                        <li>
+                                        <li @click="toDone(index)">
                                             <div>{{ item.text }}</div>
                                             <div>
                                                 <button class="btn danger">
@@ -74,22 +74,19 @@
                             <div class="done list-item">
                                 <h2>已完成</h2>
                                 <ul class="list-group done">
-                                    <li>
-                                        <div>11111</div>
-                                        <div>
-                                            <button class="btn danger">
-                                                刪除
-                                            </button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div>22222</div>
-                                        <div>
-                                            <button class="btn danger">
-                                                刪除
-                                            </button>
-                                        </div>
-                                    </li>
+                                    <template
+                                        v-for="(item, index) in processDoneList"
+                                        :key="index"
+                                    >
+                                        <li @click="toProcess(index)">
+                                            <div>{{ item.text }}</div>
+                                            <div>
+                                                <button class="btn danger">
+                                                    刪除
+                                                </button>
+                                            </div>
+                                        </li>
+                                    </template>
                                 </ul>
                             </div>
                         </div>
