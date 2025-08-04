@@ -57,10 +57,10 @@
                                 <h2>進行中</h2>
                                 <ul class="list-group">
                                     <template
-                                        v-for="(item, index) in processList"
+                                        v-for="(item, index) in processItems()"
                                         :key="index"
                                     >
-                                        <li @click="toDone(index)">
+                                        <li @click="toDone(item.id)">
                                             <div>{{ item.text }}</div>
                                             <div>
                                                 <button class="btn danger">
@@ -75,10 +75,10 @@
                                 <h2>已完成</h2>
                                 <ul class="list-group done">
                                     <template
-                                        v-for="(item, index) in processDoneList"
+                                        v-for="(item, index) in doneItems()"
                                         :key="index"
                                     >
-                                        <li @click="toProcess(index)">
+                                        <li @click="toProcess(item.id)">
                                             <div>{{ item.text }}</div>
                                             <div>
                                                 <button class="btn danger">
@@ -96,5 +96,6 @@
         </div>
     </body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./js/todo-app.js"></script>
+    <script type="module" src="./js/todo-app.js"></script>
+    <!-- <script src="./js/todo-app.js"></script> -->
 </html>
