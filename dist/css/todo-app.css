@@ -87,6 +87,7 @@ body {
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius);
   padding: 15px;
+  margin-bottom: 20px;
 }
 #app .wrap .create .input-group {
   display: grid;
@@ -113,6 +114,17 @@ body {
 }
 #app .wrap .create .input-group input[type=text]:focus {
   box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.8);
+}
+#app .wrap .list .list-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+#app .wrap .list .list-item {
+  background: rgba(255, 255, 255, 0.1568627451);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  min-height: 300px;
 }
 #app .btn {
   padding: 10px 20px;
