@@ -3,13 +3,13 @@ class Api {
         this.api = api;
     }
 
-    async read(uid) {
+    async read(uid, sleep = 0) {
         let api = this.api;
         if (!api || !uid) {
             return { code: 400, data: [] };
         }
 
-        let result = await fetch(`${api}?uid=${uid}`);
+        let result = await fetch(`${api}?uid=${uid}&sleep=${sleep}`);
         let data = await result.json();
         return data;
     }
