@@ -127,4 +127,44 @@ const options = {
     },
 };
 
+const getTodo = async (uid) => {
+    let api = apiStorage.read();
+    if (!api || !uid) {
+        return { code: 404, data: [] };
+    }
+
+    let result = await fetch(`${api}?uid=${uid}`);
+    let data = await result.json();
+    return data;
+};
+
+const setTodo = async (uid, todo = []) => {
+    let api = apiStorage.read();
+    if (!api || uid) {
+        return { code: 400, data: [] };
+    }
+
+    let params = {
+        uid: uid,
+        data: todo,
+    };
+
+    let options = {
+        method: "POST",
+        body: JSON.stringify(params), // Object 轉 JSON 裝進 body(包裹)
+    };
+
+    let result = await fetch(api, options);
+    let data = await result.json();
+    return data;
+};
+
+// let setResult = await setTodo("david", [
+//     { id: 1, text: "test", status: "pending" },
+// ]);
+// console.log(setResult);
+
+// let data = await getTodo("david");
+// console.log(data);
+
 createApp(options).mount("#app");
