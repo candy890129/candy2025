@@ -14,7 +14,7 @@ class Api {
         return data;
     }
 
-    async write(uid, todo = []) {
+    async write(uid, todo = [], sleep = 0) {
         let api = this.api;
         if (!api || !uid) {
             return { code: 400, data: [] };
@@ -23,6 +23,7 @@ class Api {
         let params = {
             uid: uid,
             data: todo,
+            sleep: sleep,
         };
 
         let options = {
