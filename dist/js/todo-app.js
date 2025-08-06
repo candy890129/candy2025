@@ -155,7 +155,40 @@ const options = {
             }
         },
         async setTodo() {
-            console.log("setTodo");
+            // 當儲存時間超過 1s 時，顯示儲存中
+            let dalayTimer = setTimeout(() => {
+                Swal.fire({
+                    title: "儲存中",
+                    html: "請稍後...",
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    },
+                });
+            }, 1000);
+            let response = await api.write(
+                this.currentUser,
+                this.processList,
+                5
+            );
+            clearTimeout(dalayTimer);
+            Swal.close();
+            if (response.code === 200) {
+                Swal.fire({
+                    title: "儲存成功",
+                    text: "資料已儲存",
+                    icon: "success",
+                });
+            } else {
+                Swal.fire({
+                    title: "儲存失敗",
+                    text: "資料未儲存",
+                    icon: "error",
+                });
+            }
         },
     },
     mounted() {
@@ -169,7 +202,6 @@ const options = {
         api = new Api(this.api);
     },
 };
-
 // let setResult = await setTodo("david", [
 //     { id: 1, text: "test", status: "pending" },
 // ]);
