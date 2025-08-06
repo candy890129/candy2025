@@ -77,6 +77,15 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+#app .wrap .setting .api .current-api {
+  display: grid;
+  gap: 10px;
+}
+#app .wrap .setting .api .current-api .api-btn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
 #app .wrap .setting .light {
   color: #fff;
 }

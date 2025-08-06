@@ -26,7 +26,8 @@
                         <div class="api">
                             <div class="current-api">
                                 <span>API 位置：</span>
-                                <!-- {"code":400,"message":"\u9700\u8981\u4f7f\u7528\u8005 ID"} api位置 -->
+                                <!-- https://book.niceinfos.com/api/todo/ api位置 -->
+                                -->
                                 <span class="light">{{ api }}</span>
                                 <span
                                     >（狀態：
@@ -39,7 +40,14 @@
                                     ）</span
                                 >
                             </div>
-                            `
+                            <div class="api-btn">
+                                <button class="btn primary" @click="getTodo">
+                                    載入
+                                </button>
+                                <button class="btn danger" @click="setTodo">
+                                    儲存
+                                </button>
+                            </div>
                             <div class="change-api">
                                 <button class="btn primary" @click="setAPI">
                                     設定 API

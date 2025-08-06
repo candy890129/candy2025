@@ -1,8 +1,10 @@
 import { Storage } from "./components/Storage.js";
+import { Api } from "./components/Api.js";
 
 let todoStorage = null;
 const userStorage = new Storage("user");
 const apiStorage = new Storage("api");
+let api = null;
 
 let currentUser = userStorage.read();
 
@@ -114,6 +116,14 @@ const options = {
             }
             // 儲存 API 到 localStorage
             apiStorage.write(this.api);
+            api = new Api(this.api);
+        },
+        async getTodo() {
+            let data = await api.read(this.currentUser);
+            console.log(data);
+        },
+        async setTodo() {
+            console.log("setTodo");
         },
     },
     mounted() {
@@ -124,39 +134,8 @@ const options = {
         console.log(this.currentUser);
 
         this.api = apiStorage.read();
+        api = new Api(this.api);
     },
-};
-
-const getTodo = async (uid) => {
-    let api = apiStorage.read();
-    if (!api || !uid) {
-        return { code: 404, data: [] };
-    }
-
-    let result = await fetch(`${api}?uid=${uid}`);
-    let data = await result.json();
-    return data;
-};
-
-const setTodo = async (uid, todo = []) => {
-    let api = apiStorage.read();
-    if (!api || uid) {
-        return { code: 400, data: [] };
-    }
-
-    let params = {
-        uid: uid,
-        data: todo,
-    };
-
-    let options = {
-        method: "POST",
-        body: JSON.stringify(params), // Object 轉 JSON 裝進 body(包裹)
-    };
-
-    let result = await fetch(api, options);
-    let data = await result.json();
-    return data;
 };
 
 // let setResult = await setTodo("david", [
