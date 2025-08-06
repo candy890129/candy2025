@@ -25,28 +25,32 @@
                         </div>
                         <div class="api">
                             <div class="current-api">
-                                <span>API 位置：</span>
-                                <!-- https://book.niceinfos.com/api/todo/ api位置 -->
-                                -->
-                                <span class="light">{{ api }}</span>
-                                <span
-                                    >（狀態：
-                                    <span class="danger" v-show="!api"
-                                        >未設定</span
+                                <div>
+                                    <span>API 位置：</span>
+                                    <!-- https://book.niceinfos.com/api/todo/ api位置 -->
+                                    <span class="light">{{ api }}</span>
+                                    <span
+                                        >（狀態：
+                                        <span class="danger" v-show="!api"
+                                            >未設定</span
+                                        >
+                                        <span class="success" v-show="api"
+                                            >已設定</span
+                                        >
+                                        ）</span
                                     >
-                                    <span class="success" v-show="api"
-                                        >已設定</span
+                                </div>
+                                <div class="api-btn">
+                                    <button
+                                        class="btn primary"
+                                        @click="getTodo"
                                     >
-                                    ）</span
-                                >
-                            </div>
-                            <div class="api-btn">
-                                <button class="btn primary" @click="getTodo">
-                                    載入
-                                </button>
-                                <button class="btn danger" @click="setTodo">
-                                    儲存
-                                </button>
+                                        載入
+                                    </button>
+                                    <button class="btn danger" @click="setTodo">
+                                        儲存
+                                    </button>
+                                </div>
                             </div>
 
                             <div class="change-api">
