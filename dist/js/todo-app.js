@@ -23,7 +23,7 @@ const setUser = async () => {
     todoStorage = new Storage(`todo-${currentUser}`);
 };
 
-setUser();
+await setUser();
 
 const { createApp } = Vue;
 
@@ -33,6 +33,7 @@ const options = {
             currentUser: "",
             processText: "",
             processList: [],
+            api: "",
         };
     },
     methods: {
@@ -98,6 +99,19 @@ const options = {
             await setUser();
             this.processList = todoStorage.read([]);
             this.currentUser = userStorage.read();
+        },
+        async setAPI() {
+            let result = await Swal.fire({
+                title: "設定 API",
+                input: "text",
+                confirmButtonText: "確定",
+                cancelButtonText: "取消",
+            });
+
+            if (result.isConfirmed) {
+                this.api = result.value;
+            }
+            // 儲存 API 到 localStorage
         },
     },
     mounted() {
