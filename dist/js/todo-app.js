@@ -2,6 +2,7 @@ import { Storage } from "./components/Storage.js";
 
 let todoStorage = null;
 const userStorage = new Storage("user");
+const apiStorage = new Storage("api");
 
 let currentUser = userStorage.read();
 
@@ -112,6 +113,7 @@ const options = {
                 this.api = result.value;
             }
             // 儲存 API 到 localStorage
+            apiStorage.write(this.api);
         },
     },
     mounted() {
@@ -120,6 +122,8 @@ const options = {
 
         this.currentUser = userStorage.read();
         console.log(this.currentUser);
+
+        this.api = apiStorage.read();
     },
 };
 
