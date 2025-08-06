@@ -119,8 +119,40 @@ const options = {
             api = new Api(this.api);
         },
         async getTodo() {
-            let data = await api.read(this.currentUser);
-            console.log(data);
+            // 當載入時間超過 1s 時，顯示載入中
+            let delayTimer = setTimeout(() => {
+                Swal.fire({
+                    title: "載入中",
+                    html: "請稍後...",
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    showConfirmButton: false,
+                    showCancelButton: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    },
+                });
+            }, 1000);
+
+            let response = await api.read(this.currentUser, 5);
+            clearTimeout(delayTimer);
+            Swal.close();
+            // 考量載入失敗可能性
+            if (response.code === 200) {
+                let result = await Swal.fire({
+                    title: "載入確認",
+                    text: "將覆蓋目前資料，確定要載入資料嗎？",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonText: "確定",
+                    cancelButtonText: "取消",
+                });
+                console.log(result);
+                if (result.isConfirmed) {
+                    this.processList = response.data;
+                    todoStorage.write(this.processList);
+                }
+            }
         },
         async setTodo() {
             console.log("setTodo");
